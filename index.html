@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma Page Web</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        h1, p {
+            text-align: center;
+        }
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        input, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            margin: 20px auto;
+            max-width: 600px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        .carousel img {
+            width: 100%;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Titre -->
+    <h1>Bienvenue sur ma Page Web</h1>
+
+    <!-- Texte -->
+    <p>Voici un exemple simple de page web créée avec HTML.</p>
+
+    <!-- Image -->
+    <img src="https://via.placeholder.com/600x300" alt="Image exemple" style="display: block; margin: 20px auto; border-radius: 8px;">
+
+    <!-- Formulaire de Contact -->
+    <form>
+        <h2>Contactez-nous</h2>
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom" placeholder="Entrez votre nom" required>
+        
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" placeholder="Entrez votre email" required>
+        
+        <label for="message">Message :</label>
+        <textarea id="message" name="message" rows="4" placeholder="Entrez votre message" required></textarea>
+        
+        <button type="submit">Envoyer</button>
+    </form>
+
+    <!-- Carousel d'images -->
+    <div class="carousel">
+        <img src="https://via.placeholder.com/600x300?text=Image+1" alt="Image 1">
+        <img src="https://via.placeholder.com/600x300?text=Image+2" alt="Image 2">
+        <img src="https://via.placeholder.com/600x300?text=Image+3" alt="Image 3">
+    </div>
+
+    <script>
+        // Fonction pour faire défiler les images dans le carousel
+        const carousel = document.querySelector('.carousel');
+        let scrollAmount = 0;
+
+        setInterval(() => {
+            scrollAmount += carousel.offsetWidth;
+            if (scrollAmount >= carousel.scrollWidth) {
+                scrollAmount = 0;
+            }
+            carousel.scrollTo({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        }, 3000); // Défiler toutes les 3 secondes
+    </script>
+</body>
+</html>
